@@ -1,0 +1,11 @@
+h2{color:#82c8a0;
+font-size:3em;}
+
+.expanded{
+	width:0px;
+	opacity:0;
+}
+
+#searchForm{transition: 1s}
+
+.form-control{transition: 1s !important}

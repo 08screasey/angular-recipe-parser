@@ -1,0 +1,40 @@
+
+
+<div class="row">
+	<div class="col">
+		<h2 class="text-center">My Saved Recipes</h2>
+	</div>
+</div>
+<div class="row w-100 mt-5  p-2" style="background: hsl(145.7, 28.9%, 94.7%); border: 5px solid #82c8a0">
+	<div class="col">
+	<form #searchForm="ngForm" (keyup)="filterRecipes(searchForm)" class="form-inline">
+		<div class="input-group mb-2 mr-sm-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text" (click)="searchExpand()">Search</div>
+    </div>
+  <input type="text" ngModel name="title" class="form-control" [ngStyle]="{'width':formExpanded ? '150px' : '50px'}">
+  </div>
+		<div class="input-group mb-2 mr-sm-2">
+    
+  <select name="meal" id="meal" ngModel class="form-control" [ngStyle]="{'display':formExpanded ? 'inline' : 'none'}">
+			<option value="" disabled selected>Meal Type</option>
+			<option value="">All</option>
+			<option value="Dessert">Dessert</option>
+			<option value="Main">Main</option>
+			<option value="Sides">Sides</option>
+			<option value="Dips & Sauces">Dips & Sauces</option>
+		</select>
+  </div>
+				
+				
+	
+		
+	</form>
+	<div class="d-flex flex-wrap-none pt-2" style="overflow-x: auto; height: 420px	; border:1px solid grey; box-shadow: 0px 0px 5px black inset; background: hsl(145.7, 20.9%, 74.7%);
+flex-wrap: nowrap;">
+<div style="width:100px; height:100%"></div>
+<app-recipe-item *ngFor='let recipe of filteredList; let i = index' [i]="i"></app-recipe-item>
+<div style="width:100px; height: 100%"></div>
+</div>
+
+</div></div>

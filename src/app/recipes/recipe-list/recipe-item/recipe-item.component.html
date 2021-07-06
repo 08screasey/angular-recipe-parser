@@ -1,0 +1,16 @@
+<a class="list-group-item border"  style="height:380px; box-shadow:3px 3px 0px black; box-shadow: 5px 5px 3px rgba(0,0,0,0.6)">
+	<div class="row border" style="" >
+		<div class="col-6 w-100 justify-content-center border" >
+			<img [src]='recipe.imagePath' class=" w-100">
+		</div>
+		<div class="col-6 d-flex justify-content-center align-items-center">
+			<h2 class="text-center w-75">{{recipe.title | shorten}} </h2>
+		</div>	
+	</div>
+	<div class="row position-absolute w-100" style="bottom:0px;">
+			<div class="col-12">
+				<button class="btn-gradient green block mt-5" (click)="onDetailNavigate(index)" style="bottom:20px;">Check It Out</button>
+			
+		</div>
+	</div>	
+</a>

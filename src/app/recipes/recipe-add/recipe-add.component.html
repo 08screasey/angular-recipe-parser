@@ -1,0 +1,29 @@
+<div class="row" [ngStyle]="{'margin-top': onPreview()}" id="searchForm">
+<div class="col">
+	<h2 class="text-center">Paste Recipe Url Here:</h2>
+</div>
+</div>
+<div class="row mt-3">
+	<div class="col d-flex justify-content-center">
+		<form #recipeAddForm='ngForm' (ngSubmit)="addNewRecipe(recipeAddForm)">
+	<div class="form-row">
+		<div class="col-8">
+			<input type="text" class="w-100 form-control" ngModel name="recipeUrl">
+		</div>
+		<div class="col-3">
+			<button class="btn-xs btn ">Preview</button>
+		</div>
+	</div>
+</form>
+	</div>
+</div>
+<div class="row mt-3">
+	<div class="col-12 d-flex justify-content-center">
+	<div *ngIf="loading">
+		<app-loading-spinner></app-loading-spinner>
+	</div>
+		
+		<app-recipe-details *ngIf='loadedRecipe && !loading' [addRecipe]="loadedRecipe"></app-recipe-details>
+	</div>
+</div>
+

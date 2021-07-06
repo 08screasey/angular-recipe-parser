@@ -1,0 +1,11 @@
+h2{
+	color:#82c8a0;
+	font-size: 3em
+}
+#searchForm{
+	transition: 1s
+}
+button{
+	background: #82c8a0;
+	color:white;
+}

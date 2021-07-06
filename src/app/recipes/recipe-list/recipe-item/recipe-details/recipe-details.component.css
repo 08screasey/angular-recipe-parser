@@ -1,0 +1,25 @@
+img{
+	object-fit: contain;
+	margin:auto;
+}
+
+ul{
+	list-style: none
+}
+
+#save{
+	background: #82c8a0;
+	color:white;
+}
+
+#edit{
+	background: #82c8a0;
+	color:white;
+}
+#urlTag:hover{
+text-decoration: underline;
+}
+#submit{
+	background: #82c8a0;
+	color:white;
+}

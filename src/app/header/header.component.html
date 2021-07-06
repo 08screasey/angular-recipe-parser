@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3" id="navbar">
+  <a class="navbar-brand" style="color:white!important; font-size: 2em">Vegan Recipe Finder</a>
+
+  <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"
+  style="color:white!important; border: 1px solid white!important">
+    &#9776;
+  </button>
+
+  <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+  <div [collapse]="isMenuCollapsed" [isAnimated]='true' class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto" *ngIf="!isAuthenticated">
+      <li class="nav-item">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="['/authenticate']" RouterLinkActive = 'active' (click)="isMenuCollapsed = true">Login</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="isAuthenticated">
+      <li class="nav-item">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="['/recipes/search']" RouterLinkActive = 'active' (click)="isMenuCollapsed = true">Search Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/recipes/add']" RouterLinkActive = 'active' (click)="isMenuCollapsed = true">Add New Recipe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/recipes']" RouterLinkActive = 'active'>My Recipes</a>
+      </li>
+      <li class="nav-item">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="['/authenticate']" RouterLinkActive = 'active' (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+   
+
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col">
+		<form #recipeSearch="ngForm" (submit)="submitForm(recipeSearch)">
+			<div class="form-control-group form-row justify-content-between">	
+				<input type="text" placeholder="Search Recipe" class="form-control col-9" ngModel name="search">
+				<button class='btn col-2'>Submit</button>
+			</div>
+			<div class="form-control-group form-row mt-2">
+				<button class="btn btn-xs btn-block shadow" type="button"(click)='isFormCollapsed = !isFormCollapsed'>Filters</button>
+				
+			</div>
+		</form>
+
+	</div>
+</div>
+<div class="row mt-2 pt-2" *ngIf="recipeList.length>0">	
+		<div class="col">	
+		<div class="d-flex flex-wrap-none pt-2 border" *ngIf="recipeList.length>0" style="overflow-x: auto; height: 520px;
+flex-wrap: nowrap;">
+<div style="width:100px; height:100%"></div>
+<app-recipe-item *ngFor='let recipe of recipeList; let i = index' [i]="i"></app-recipe-item>
+<div style="width:100px; height: 100%"></div>
+</div>
+		</div>
+</div>
+
